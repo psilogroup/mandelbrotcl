@@ -15,8 +15,9 @@ project (OpenCL_Example)
 set (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/")
  
 find_package( OpenCL REQUIRED )
+find_package(SDL2 REQUIRED)
 
-include_directories( ${OPENCL_INCLUDE_DIR} )
+include_directories( ${OPENCL_INCLUDE_DIR} ${SDL2_INCLUDE_DIRS} )
 
 # Source code of application		
 set (mandelbrotcl_src mandelbrotcl.cpp)
@@ -33,4 +34,4 @@ endif (CMAKE_COMPILER_IS_GNUCC)
  
 # Set up executable
 add_executable (mandelbrotcl ${mandelbrotcl_src})
-target_link_libraries(mandelbrotcl ${OPENCL_LIBRARIES})
+target_link_libraries(mandelbrotcl ${OPENCL_LIBRARIES} ${SDL2_LIBRARIES})
