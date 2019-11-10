@@ -1,4 +1,4 @@
-export LD_LIBRARY_PATH=/opt/amdgpu-pro/lib/x86_64-linux-gnu
+mkdir -p build
 cd build
 cmake ../
 make
